@@ -23,4 +23,4 @@ question="Make a five days travel plan to switzerland"
 _prompt = f"You are a helpful assistant and your job is to understand the Question given and answer it \n Question:-{question}"
 
 prompt={"messages": [{"content": _prompt, "role": "user"}], "model": "meta-llama/Llama-3-70b-chat-hf"}
-print("".join(re.findall("\"message\":\"(.+?)\",",queryDuck(prompt))))
+print("".join(re.findall("\"message\":\"(.+?)\",\"created\":\d+,\"id\":",queryDuck(prompt))))
